@@ -44,16 +44,16 @@ class YtdlPafy(BasePafy):
         if self.callback:
             self.callback("Fetched video info")
 
-        self._title = self._ydl_info.get('title', 0)
-        self._author = self._ydl_info.get('uploader', 0)
+        self._title = self._ydl_info.get('title', '')
+        self._author = self._ydl_info.get('uploader', '')
         self._rating = self._ydl_info.get('average_rating', 0)
         self._length = self._ydl_info.get('duration', 0)
         self._viewcount = self._ydl_info.get('view_count', 0)
         self._likes = self._ydl_info.get('like_count', 0)
         self._dislikes = self._ydl_info.get('dislike_count', 0)
         self._username = self._ydl_info.get('uploader_id', 0)
-        self._category = self._ydl_info.get('categories', 0)[0] if self._ydl_info['categories'] else ''
-        self._bestthumb = self._ydl_info.get('thumbnails', 0)[0]['url']
+        self._category = self._ydl_info.get('categories')[0] if self._ydl_info['categories'] else ''
+        self._bestthumb = self._ydl_info.get('thumbnails')[0]['url']
         self._bigthumb = g.urls['bigthumb'] % self.videoid
         self._bigthumbhd = g.urls['bigthumbhd'] % self.videoid
         self.expiry = time.time() + g.lifespan
