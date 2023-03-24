@@ -10,22 +10,19 @@ python setup.py sdist bdist_wheel
 """
 
 from setuptools import setup
-from pafy import __version__
 
 setup(
     name='pafy',
     packages=['pafy'],
     scripts=['scripts/ytdl'],
-    version=__version__,
+    version="0.5.5",
     description="Retrieve YouTube content and metadata",
     keywords=["pafy", "API", "YouTube", "youtube", "download", "video"],
     author="np1",
     author_email="np1nagev@gmail.com",
     url="https://github.com/mps-youtube/pafy/",
     download_url="https://github.com/mps-youtube/pafy/tags",
-    install_requires=[
-        "git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl"
-    ],
+    install_requires=["youtube-dl"],
     extras_require={
         'youtube-dl-backend': ["youtube-dl"],
     },
