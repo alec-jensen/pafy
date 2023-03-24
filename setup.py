@@ -25,7 +25,7 @@ setup(
     download_url="https://github.com/mps-youtube/pafy/tags",
     dependency_links=[
         "git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl"
-    ]
+    ],
     package_data={"": ["LICENSE", "README.rst", "CHANGELOG", "AUTHORS"]},
     include_package_data=True,
     license='LGPLv3',
